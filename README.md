@@ -11,7 +11,7 @@ This README provides an overview of the post-processing steps involved in refini
 To run the scripts, you will need the following dependencies:
 numpy, matplotlib, scipy, skimage, tensorflow, networkx, PIL, cv2, joblib, tqdm, pydensecrf
 
-Install pydensecrf from [here](https://github.com/lucasb-eyer/pydensecr)
+Install pydensecrf from [here](https://github.com/lucasb-eyer/pydensecrf)
 
 ## Installation Instructions
 Clone this repository to your local machine. No further installation is required. Run scripts from Post1 to Post5 in sequential order.
