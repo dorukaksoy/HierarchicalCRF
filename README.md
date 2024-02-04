@@ -3,6 +3,7 @@
 ## Introduction
 This repository contains the supplementary code for the journal article titled "Human Perception-Inspired Grain Segmentation Refinement Using Conditional Random Fields". If you use this code in your research, please cite:
 
+https://arxiv.org/abs/2312.09968
 <CITATION INFORMATION WILL BE PROVIDED ONCE AVAILABLE>
 
 This README provides an overview of the post-processing steps involved in refining grain segmentation in fine interconnected grain networks. Below, you will find detailed descriptions of the terminology used, individual scripts, and their functions in the project.
