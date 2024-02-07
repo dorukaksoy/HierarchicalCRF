@@ -1,0 +1,12 @@
+numpy==1.22.3
+pandas==1.4.2
+matplotlib==3.5.1
+scipy==1.8.0
+scikit-image
+tensorflow==2.7.0
+protobuf==3.20.3
+networkx==2.8
+pillow==9.1.0
+opencv-python==4.6.0.66
+joblib==1.1.0
+tqdm==4.64.0
