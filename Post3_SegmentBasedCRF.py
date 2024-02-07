@@ -9,7 +9,7 @@
 # Date: 09/01/2023
 # ------------------
 # Version: Python 3.8
-# Execution: python3 Post1_PixelBasedCRF.py
+# Execution: python3 Post3_SegmentBasedCRF.py
 # ---------------------------------------------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
@@ -262,14 +262,16 @@ def SegmentBasedCRF(tagged_triple_junctions, tagged_l_junctions, labeled_broken_
     
     for seg_ind in on_completion_idxs:
         viable_pair = pplib.extract_field(classified_post3, l_junctions_post3, completion_segments[seg_ind], field_size=max_distance*2)
-        viable_pairs.append(viable_pair)
+        if viable_pair is not None:
+            viable_pairs.append(viable_pair)
     # Save the arrays for next script
     joblib.dump((viable_pairs, classified_post3, labeled_complete_segments, tagged_triple_junctions, labeled_broken_segments_post3, tagged_l_junctions_post3, l_junctions_post3), './Post3.pkl')
     
     true_viable_pairs = []
     for seg_ind in true_on_completion_idxs:
         viable_pair = pplib.extract_field(true_classified_post3, true_l_junctions_post3, completion_segments[seg_ind], field_size=max_distance*2)
-        true_viable_pairs.append(viable_pair)
+        if viable_pair is not None:
+            true_viable_pairs.append(viable_pair)
 
     # Save the arrays for next script
     joblib.dump((true_viable_pairs, true_classified_post3, labeled_complete_segments, tagged_triple_junctions, true_labeled_broken_segments_post3, true_tagged_l_junctions_post3, true_l_junctions_post3), './Post3_true.pkl')

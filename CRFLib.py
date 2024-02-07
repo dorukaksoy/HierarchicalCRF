@@ -134,9 +134,10 @@ def find_intersection(extended_line_1, extended_line_2):
     m1, b1 = line_parameters(p1, q1)
     m2, b2 = line_parameters(p2, q2)
 
-    # If slopes are equal, the lines are parallel and might not intersect (unless collinear).
-    if m1 == m2:
-        return None
+    # If slopes are equal (or within a tolerance), the lines are parallel and might not intersect (unless collinear).
+    tolerance = 1e-5
+    if abs(m1 - m2) < tolerance:
+        return None  # Lines are parallel
 
     # Calculate the x-coordinate of the intersection point using the formula: x = (b2 - b1) / (m1 - m2)
     x = (b2 - b1) / (m1 - m2)
@@ -227,7 +228,10 @@ def angle_between_lines(line_1, line_2):
         theta=np.inf
         print("!!! Division by zero error in angle_between_lines")
     else:
-        theta = math.acos(dot_product / (mag_A * mag_B))
+        # Clamp the value to the range [-1.0, 1.0] to avoid domain errors
+        cosine_angle = dot_product / (mag_A * mag_B)
+        clamped_cosine_angle = max(min(cosine_angle, 1.0), -1.0)
+        theta = math.acos(clamped_cosine_angle)
     
     # Convert to degrees
     angle_in_degrees = np.round(math.degrees(theta),0) # Round to the closest value (to avoid 0.1 to 0.3 discrepancies)
@@ -255,8 +259,12 @@ def image_features(clique, broken_segments, completion_segments, iso_points, ima
     extended_line_1 = extend_line_from_point(c_segment[0], iso_points[c_segment[0]], image.shape[0])
     extended_line_2 = extend_line_from_point(c_segment[-1], iso_points[c_segment[-1]], image.shape[0])
         
-    # Check if the lines extended from the endpoints of the broken segments cross
-    intersection_point = find_intersection(extended_line_1, extended_line_2)
+    import warnings 
+    with warnings.catch_warnings():
+        # Suppress the runtime warning (getting a double scalar error for some reason)
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        # Check if the lines extended from the endpoints of the broken segments cross
+        intersection_point = find_intersection(extended_line_1, extended_line_2)
     
     if intersection_point:
         edge_ij = (c_segment[0], intersection_point)

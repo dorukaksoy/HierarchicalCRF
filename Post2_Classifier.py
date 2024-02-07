@@ -15,10 +15,11 @@
 import numpy as np
 from scipy.ndimage import convolve, label
 import joblib
-
+from tqdm import tqdm
 # Custom Libraries
 import PostProcessingPlots as pplot
 import PostProcessingLib as pplib
+
 # %% Helper methods
 # A helper function to find the neighboring foreground pixel in the same segment for an isolated point:
 def find_neighbor_pixel(labeled_segments, y, x, label):
@@ -143,7 +144,8 @@ def label_features(image, window_size = 5):
     non_unique_broken_segment_labels = []
     
     # Check all the unique labels in all segments (except 0)
-    for seg_label in np.unique(labeled_segments)[1:]:
+    print("Labeling features...")
+    for seg_label in tqdm(np.unique(labeled_segments)[1:]):
         labeled_segments_coords = [(y, x) for y, x in zip(*np.where(labeled_segments==seg_label))]
         for pixel in broken_segments_coords:
             if pixel in labeled_segments_coords:
@@ -192,6 +194,7 @@ if __name__ == "__main__":
 
     # Label features
     (tagged_triple_junctions, tagged_iso_points, labeled_broken_segments, labeled_complete_segments, iso_points, broken_segments, broken_segment_labels) = label_features(tagged_post1, window_size)
+    print("Features are labeled.")
     
     # Reset the indices of the broken_segments dict
     broken_segments = {i: v for i, v in enumerate(broken_segments.values())}
@@ -207,4 +210,5 @@ if __name__ == "__main__":
     
     pplot.post_classified_image(classified_post2, iso_points)
     
+    # Save the arrays for the next script
     joblib.dump((tagged_triple_junctions, tagged_iso_points, labeled_broken_segments, labeled_complete_segments, iso_points, broken_segments, broken_segment_labels, classified_post2), './Post2.pkl')
