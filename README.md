@@ -3,15 +3,22 @@
 ## Introduction
 This repository contains the supplementary code for the journal article titled "Human Perception-Inspired Grain Segmentation Refinement Using Conditional Random Fields". If you use this code in your research, please cite:
 
+https://arxiv.org/abs/2312.09968
 <CITATION INFORMATION WILL BE PROVIDED ONCE AVAILABLE>
 
 This README provides an overview of the post-processing steps involved in refining grain segmentation in fine interconnected grain networks. Below, you will find detailed descriptions of the terminology used, individual scripts, and their functions in the project.
 
 ## Dependencies
 To run the scripts, you will need the following dependencies:
-numpy, matplotlib, scipy, skimage, tensorflow, networkx, PIL, cv2, joblib, tqdm, pydensecrf
+numpy, matplotlib, scipy, scikit-image, tensorflow, networkx, PIL, cv2, joblib, tqdm, [pydensecrf](https://github.com/lucasb-eyer/pydensecrf)
 
-Install pydensecrf from [here](https://github.com/lucasb-eyer/pydensecrf)
+The specific versions can be found in the `requirements.txt`, and can be installed with:
+
+`pip install -r requirements.txt`
+
+Followed by:
+
+`pip install git+https://github.com/lucasb-eyer/pydensecrf.git`
 
 ## Installation Instructions
 Clone this repository to your local machine. No further installation is required. Run scripts from Post1 to Post5 in sequential order.
