@@ -9,7 +9,7 @@ https://arxiv.org/abs/2312.09968
 This README provides an overview of the post-processing steps involved in refining grain segmentation in fine interconnected grain networks. Below, you will find detailed descriptions of the terminology used, individual scripts, and their functions in the project. In addition, a sample pipeline is provided in the 'sample_vision_processing_pipeline' folder. The details of this pipeline is provided after the detailed descriptions.
 
 ## Dependencies
-To run the scripts, you will need the following dependencies:
+To run the scripts, you will need the following dependencies for Python 3.8.11:
 numpy, matplotlib, scipy, scikit-image, tensorflow, networkx, PIL, cv2, joblib, tqdm, [pydensecrf](https://github.com/lucasb-eyer/pydensecrf)
 
 The specific versions can be found in the `requirements.txt`, and can be installed with:
