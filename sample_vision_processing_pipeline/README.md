@@ -1,3 +1,9 @@
+### The Trained Model
+The machine vision model can be downloaded from the following link:
+https://drive.google.com/drive/folders/1dO6uGhXzslopCXj0BiIqxUK4FJsW8ziI?usp=sharing
+
+Please contact will.bowman@uci.edu if the above link does not work.
+
 ### User Guide for Script Series
 
 This user guide provides detailed instructions for setting up and running a series of scripts on an Ubuntu system, particularly focused on a hierarchical CRF model with an optional human-in-the-loop (HITL) approach.
