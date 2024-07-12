@@ -80,7 +80,7 @@ fi
 if [[ $HITL == "True" ]]; then
   remaining_scripts=("Post4_Pathfinding.py True")
 else
-  scripts=("Post4_Pathfinding.py False")
+  remaining_scripts=("Post4_Pathfinding.py False")
 fi
 remaining_scripts+=(Post5_Segmentation.py Post6_LineScanPoints.py)
 
