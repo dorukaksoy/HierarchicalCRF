@@ -4,6 +4,8 @@ https://drive.google.com/drive/folders/1dO6uGhXzslopCXj0BiIqxUK4FJsW8ziI?usp=sha
 
 Please contact will.bowman@uci.edu if the above link does not work.
 
+The model should be placed in the "sample_vision_processing_pipeline" directory and named "Machine_Vision.model".
+
 ### User Guide for Script Series
 
 This user guide provides detailed instructions for setting up and running a series of scripts on an Ubuntu system, particularly focused on a hierarchical CRF model with an optional human-in-the-loop (HITL) approach.
