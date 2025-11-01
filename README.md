@@ -1,10 +1,7 @@
 # HierarchicalCRF
 
 ## Introduction
-This repository contains the supplementary code for the journal article titled "Human Perception-Inspired Grain Segmentation Refinement Using Conditional Random Fields". If you use this code in your research, please cite:
-
-https://arxiv.org/abs/2312.09968
-<CITATION INFORMATION WILL BE PROVIDED ONCE AVAILABLE>
+This repository contains the supplementary code for the journal article titled ["Human perception-inspired grain segmentation refinement using conditional random fields"]((https://doi.org/10.1016/j.matchar.2025.115694)). If you use this code in your research, please cite this work by referring to the [Citation section](#citation) below.
 
 This README provides an overview of the post-processing steps involved in refining grain segmentation in fine interconnected grain networks. Below, you will find detailed descriptions of the terminology used, individual scripts, and their functions in the project. In addition, a sample pipeline is provided in the 'sample_vision_processing_pipeline' folder. The details of this pipeline is provided after the detailed descriptions.
 
@@ -92,6 +89,24 @@ We encourage users to explore this sample pipeline to better understand the appl
 ## License
 This project is licensed under the MIT License.
 
+## Citation
+
+If you use this work, please cite the associated paper:
+
+```bibtex
+@article{AKSOY2025115694,
+title = {Human perception-inspired grain segmentation refinement using conditional random fields},
+journal = {Materials Characterization},
+volume = {230},
+pages = {115694},
+year = {2025},
+issn = {1044-5803},
+doi = {https://doi.org/10.1016/j.matchar.2025.115694},
+author = {Doruk Aksoy and Huolin L. Xin and Timothy J. Rupert and William J. Bowman},
+}
+```
+
 ## Contact Information
 For any queries or contributions, please contact [doruka@gmail.com](doruka@gmail.com).
+
 
