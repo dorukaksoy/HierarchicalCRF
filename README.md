@@ -93,4 +93,5 @@ We encourage users to explore this sample pipeline to better understand the appl
 This project is licensed under the MIT License.
 
 ## Contact Information
-For any queries or contributions, please contact [daksoy@uci.edu](daksoy@uci.edu).
+For any queries or contributions, please contact [doruka@gmail.com](doruka@gmail.com).
+
